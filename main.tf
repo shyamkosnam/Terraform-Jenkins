@@ -1,12 +1,11 @@
 provider "aws" {
-  region = "ap-south-1"  # Specify the desired AWS region
+    region = "ap-south-1"  
 }
 
-resource "aws_s3_bucket" "my_bucket" {
-  bucket = "shyam"  # Replace with your desired bucket name
-  acl    = "private"  # Access control list for the bucket (private, public-read, etc.)
-
+resource "aws_instance" "foo" {
+  ami           = "ami-0da59f1af71ea4ad2" # ap-south-1
+  instance_type = "t2.micro"
   tags = {
-    Name = "My Example Bucket"
+      Name = "TF-Instance"
   }
 }
